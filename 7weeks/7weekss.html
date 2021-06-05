@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script>
+            // function stop(){};
+            var n = 0;
+            var i = 0;
+            var interval = 0;
+            window.onload = function() {
+              
+                interval = setInterval(function (){
+                    
+                    var tempStr = ["test1","test2","test3","test4","test5"];
+                    
+                    if (n < 5){
+                        var p = document.getElementById(tempStr[n]);
+                        p.innerHTML = p.id;
+                        n++;
+                    }
+                    else
+                    {   
+                        for( i; i <5; i++){
+                            var t = document.getElementById(tempStr[i]);
+                            if ( i < 3)   t.innerHTML = t.id + "\t Change";
+                            else t.innerHTML = "Hello";
+                        }
+                        stop();
+                    }   
+                },1000)
+            }    
+            function stop() {
+                    clearInterval(interval);
+                }
+            
+        </script>
+
+    </head>
+    <body>
+        <h1 id="test1" style="color:green"><br/></h1>
+        <h1 id="test2" style="color:black"><br/></h1>
+        <h1 id="test3" style="color:blue"><br/></h1>
+        <h1 id="test4" style="color:yellow"><br/></h1>
+        <h1 id="test5" style="color:gray"><br/></h1>
+
+    </body>
+    </html>
