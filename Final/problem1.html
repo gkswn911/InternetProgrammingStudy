@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        var xml = '';
+        xml += "<CATALOG>";
+        xml += "<tt>";
+        xml += "	 	 <NAME>홍길동</NAME>";
+        xml += "	 	 <Programming>Ruby</Programming>";
+        xml += "</tt>";
+        xml += "<tt>";
+        xml += "	 	 <NAME>김초록</NAME>";
+        xml += "	 	 <Programming>Python</Programming>";
+        xml += "</tt>";
+        xml += "<tt>";
+        xml += "	 	 <NAME>윤하린</NAME>";
+        xml += "	 	 <Programming>C#</Programming>";
+        xml += "</tt>";
+        xml += "<tt>";
+        xml += "	 	 <NAME>김영웅</NAME>";
+        xml += "	 	 <Programming>Java</Programming>";
+        xml += "</tt>";
+        xml += "<tt>";
+        xml += "	 	 <NAME>박영희</NAME>";
+        xml += "	 	 <Programming>C</Programming>";
+        xml += "</tt>";
+        xml += "</CATALOG>"
+        $(document).ready(function () {
+                $('#header').on('click', function () {
+                    $('#header').remove();
+                    var xmlDoc = $.parseXML(xml);
+                    var out = '<table>';
+                    out += '<tr>';
+                    out += '<td>' +  '이름' + '</td>';
+                    out += '<td>' +  '프로그래밍' + '</td>';
+                    out += '</tr>';
+
+                    $(xmlDoc).find('tt').each(function (index) {
+                        out += '<tr>';
+                        out += '<td>' + $(this).find('NAME').text() + '</td>';
+                        out += '<td>' + $(this).find('Programming').text() + '</td>';
+                        out += '</tr>';
+                    });
+                    out += '</table>';
+                    document.body.innerHTML += out;
+                    $('body > table').css({'border':'green solid 1px', 'width':'200px','padding':'1px'}).add('td').css('border','green solid 1px');
+                    $('td:nth-child(2n+1)').css('color','blue');
+                    $('td:nth-child(2n+2)').css('color','green');
+                });
+            }
+        );
+    </script>
+</head>
+<body>
+<h1 id="header">Click</h1>
+</body>
+</html>
