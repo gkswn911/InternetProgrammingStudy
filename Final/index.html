@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <script>
+            window.onload = function() {
+                var pro1 = document.createElement('h1');
+                var textNode1 = document.createTextNode('Problem1');
+                
+                var pro2 = document.createElement('h1');
+                var textNode2 = document.createTextNode('Problem2');
+
+                var pro3 = document.createElement('h1');
+                var textNode3 = document.createTextNode('Problem3');
+
+                pro1.appendChild(textNode1);
+                pro2.appendChild(textNode2);
+                pro3.appendChild(textNode3);
+                document.body.appendChild(pro1);
+                document.body.appendChild(pro2);
+                document.body.appendChild(pro3);
+
+                pro1.onclick = function(){
+                    location.href="./problem1.html"
+                }
+                pro2.onclick = function(){
+                    location.href="./problem2.html"
+                }
+                pro3.onclick = function(){
+                    location.href="./problem3.html"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
