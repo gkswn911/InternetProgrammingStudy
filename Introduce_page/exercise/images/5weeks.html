@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script>
+
+            class Person {
+                constructor (name) {
+                    this._name = name;
+                }
+                getname = function() {
+                    return this._name; 
+                }
+                setname = function(input){
+                     this._name = input;
+                }
+            }
+
+            class Employee extends Person {
+                constructor(name,title){
+                    super(name);
+                    this._title = title;
+                }
+                getname = function() {
+                    return this._title; 
+                }
+                setname = function(input){
+                     this._title = input;
+                }
+                toString = function(){
+                    return this._name + ":" + this._title + "\n";
+                }
+            }
+            
+            var e1 = new Employee("Scott","Developer");
+            var e2 = new Employee("Mary","Engineering");
+            alert(e1.toString()+e2.toString());
+        </script>
+        <body>
+
+        </body>
+    </head>
+</html>

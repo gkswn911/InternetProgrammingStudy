@@ -1,0 +1,65 @@
+<!doctype html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS</title>
+		<style>
+			div {
+				overflow-x: auto;
+			}
+			table {
+				width: 900px;
+				/* min-width: 500px; */
+                margin : auto;
+                text-align: left;
+			}
+			td {
+				padding: 20px;
+				border: 1px solid #444444;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<table>
+				<tr>
+                    <td> 이름 </td>
+					<td> 이한주</td>
+					<td rowspan="3">
+                        <img src="./images/hanju.jpg" alt="My Image" width="auto" height="200">
+                    </td>
+				</tr>
+				<tr>
+                    <td> 학과 </td>
+					<td>컴퓨터공학과</td>
+					
+				</tr>
+                <tr>
+                    <td> 이메일 </td>
+					<td><a href = "gkswn911@naver.com">gkswn911@naver.com</a></td>
+					
+				</tr>
+				<tr>
+                    <td> 좋아하는 스포츠 : </td>
+					<td colspan ="2">축구</td>
+					
+				</tr>
+                <tr>
+					<td colspan="3">
+                        <video src='./videos/soccer.mp4' width="100%" height="450" controls autoplay></video>
+                    </td>
+				</tr>
+                <tr>
+					<td>
+                        롤 모델 :
+                    </td>
+					<td>
+                        척 피니
+                    </td>
+					<td>
+                        <img src = "http://kr.images.christianitydaily.com/data/images/full/100972/f.jpg" alt = "images" width = "200" height="200">
+                    </td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

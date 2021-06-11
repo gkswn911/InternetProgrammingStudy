@@ -1,0 +1,63 @@
+<html>
+    <head>
+
+        <script>
+        
+            window.onload = function() {
+
+                var Text1 = document.getElementById('text1');
+                var Text2 = document.getElementById('text2');
+                var Text3 = document.getElementById('text3');
+                var Text4 = document.getElementById('text4');
+                var ctr = document.getElementById('counterNum');
+                
+                var colorArr = {}; // 색상 배열
+                var flag = 'false'; // 문자 변경 시 판별용 flag
+
+                for(var i = 0 ; i < 5; i++){  //랜덤한 색상을 배열에 저장. 5개
+                    colorArr[i] = "#" + Math.round(Math.random() * 0xffffff).toString(16);
+                    console.log(colorArr[i]);
+                }
+                function nextRandomInteger(limit) // 랜덤 정수 구하는 함수
+                {
+                     return Math.round(Math.random() * limit);
+                }  
+
+                Text1.onclick = function(){
+                    var selCol = colorArr[nextRandomInteger(5)];
+                    Text1.style.color = selCol;
+                }
+                Text2.onclick = function() {
+                    Text2.innerHTML = 'Java Script';
+                }
+                Text3.onclick = function() {
+
+                    setInterval(() => {
+                        if (flag == 'false'){
+                        text3.innerHTML = 'Hello';
+                        flag = "true";
+                        }
+                        else{
+                            text3.innerHTML = "world";
+                            flag = "false";
+                        }
+                    }, 1000);
+                }
+                Text4.onclick = function() {
+                    ctr.innerHTML = Number(ctr.innerHTML) + 1
+                }
+            }
+
+        </script>
+
+    </head>
+    <body>
+        <h1 id='text1'>Hello World</h1> 
+        <h1 id='text2'>Hello World</h1>
+        <h1 id='text3'>Hello World</h1>
+        <h1 id='text4'>Hello World</h1>
+        <h1 id='counterNum'>0</h1>
+
+        </body>
+
+</html>

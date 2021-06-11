@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <script>
+            $(document).ready(function() {
+                // $('<img />').attr('src','https://image-se.ycrowdy.com/partner/68.png');
+                setInterval(function () {
+                    $('<img />').attr('src','https://image-se.ycrowdy.com/partner/68.png').appendTo('body');
+                    setTimeout(function () {
+                        $('img').remove();
+                    }, 500);
+                }, 1000);
+            })
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

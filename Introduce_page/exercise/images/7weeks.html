@@ -1,0 +1,69 @@
+<html>
+    <head>
+
+        <script>
+            var colors = ["","red","Yellow","Blue","Black","Green"];
+            var isStop = false;
+
+            window.onload = function() {
+                var n = 1;
+                var j = 1;
+                // var header = document.createElement('h1');
+                var result = "";
+                var tempStr = [];
+                var interval = setInterval(function (){
+                    if(n < 6){
+                    tempStr[n] = 'test ';
+                    tempStr[n] = tempStr[n].concat(n);
+                    tempStr[n] = tempStr[n].fontcolor(colors[n]);
+                    // var textNode = document.createTextNode(tempStr[n]);
+                    // header.appendChild(textNode);
+                    // document.body.appendChild(header);
+                    document.write('<h1>',tempStr[n],'<br>');
+                    n++;
+                    
+                    result = result.concat(tempStr[n],"\n");
+                    }
+                    else
+                    {
+                        location.reload();
+                        for(j = 1; j < 6; j ++){
+                        if(j < 4){
+                            tempStr[j] = tempStr[j].concat('Change');
+                            console.log(tempStr[j]);
+                        }
+                        else{
+                            tempStr[j] = 'Hello';
+                            console.log(j + " " + tempStr[j]);
+                        }
+                    }
+                    
+                    document.write('<h1>',tempStr,'<br>');
+                    stop();
+                    }
+                    
+                },1000);
+
+                function stop() {
+                    clearInterval(interval);
+                }
+                    // for(n = 1; n < 6; n ++){
+                    //     if(n < 4){
+                    //         tempStr[n] = tempStr[n].concat(n);
+                    //     }
+                    //     else{
+                    //         temp.Str[n] = 'Hello';
+                    //     }
+                    // }
+                    // doucument.write(tempStr);
+                }
+            
+        </script>
+    
+    </head>
+    <body>
+        
+        <!-- <h1 id="num"> text </h1> -->
+
+    </body>
+</html>

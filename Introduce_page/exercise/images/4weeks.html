@@ -1,0 +1,38 @@
+
+<script>
+function makeSquare(leftX,leftY,rightX,rightY) {
+    var willReturn = {
+        //property
+        leftX:leftX,
+        leftY:leftY,
+        rightX:rightX,
+        rightY:rightY,
+        //method
+        getRound: function (){
+            return (Math.abs(leftX - rightX) * 2) + (Math.abs(leftY - rightY) * 2);
+        },
+        getArea: function (){
+            return Math.abs(leftX - rightX) * Math.abs(leftY - rightY);
+        },
+        toString: function (){
+            return "Area: ("+leftX+","+leftY+") to ("+rightX+","+rightY+") = " + this.getArea() + "\n"
+            + "Circumstance("+leftX+","+leftY+") to ("+rightX+","+rightY+") = " + this.getRound() + "\n\n";
+        }
+    };
+    return willReturn;
+}
+
+var square = [];
+square.push(makeSquare(100,200,150,250));
+square.push(makeSquare(50,50,100,400));
+square.push(makeSquare(45,100,10,50));
+
+var output = "Area and Circumstance\n\n";
+
+for(var i in square){
+    output += square[i].toString();
+}
+alert(output);
+
+
+</script>
